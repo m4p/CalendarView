@@ -15,6 +15,8 @@ extension Color {
     static let backgroundPrimary: Color = {
         #if os(macOS)
         Color(NSColor.windowBackgroundColor)
+        #elseif os(watchOS)
+        Color.black
         #else
         Color(UIColor.systemBackground)
         #endif
@@ -22,6 +24,8 @@ extension Color {
     static let backgroundSecondary: Color = {
         #if os(macOS)
         Color(NSColor.underPageBackgroundColor)
+        #elseif os(watchOS)
+        Color.gray
         #else
         Color(UIColor.secondarySystemBackground)
         #endif
@@ -30,6 +34,8 @@ extension Color {
     static let onBackgroundPrimary: Color = {
         #if os(macOS)
         Color(NSColor.windowBackgroundColor)
+        #elseif os(watchOS)
+        Color.primary
         #else
         Color(UIColor.label)
         #endif
@@ -37,6 +43,8 @@ extension Color {
     static let onBackgroundSecondary: Color = {
         #if os(macOS)
         Color(NSColor.windowBackgroundColor)
+        #elseif os(watchOS)
+        Color.secondary
         #else
         Color(UIColor.secondaryLabel)
         #endif
